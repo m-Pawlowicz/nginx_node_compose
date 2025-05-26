@@ -1,0 +1,43 @@
+# Node.js dependencies and build artifacts
+node/node_modules/
+node/dist/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Docker
+**/.env
+**/.env.*
+
+# VSCode settings
+.vscode/
+
+# Ignore local environment files
+.env
+.env.*
+
+# Ignore npm debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore coverage reports
+coverage/
+
+# Ignore build output
+build/
+
+# Ignore temp files
+*.tmp
+*.swp
+*.swo
+
+# Ignore by-products of editing
+*~
+
+# Ignore docker-compose override files
+docker-compose.override.yml
