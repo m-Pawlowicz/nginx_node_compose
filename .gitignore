@@ -1,6 +1,6 @@
 # Node.js dependencies and build artifacts
-node/node_modules/
-node/dist/
+node_modules
+dist
 
 # Logs
 *.log
