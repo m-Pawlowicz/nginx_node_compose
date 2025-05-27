@@ -9,6 +9,11 @@
 # https://github.com/docker/awesome-compose
 services:
   server:
+    hostname: node
+    networks:
+      - frontend
+    depends_on:
+      - reverse_proxy
     build:
       context: ./node
     environment:
@@ -16,10 +21,17 @@ services:
     ports:
       - 3000:3000
   reverse_proxy:
+    networks:
+      - frontend
     build: 
       context: ./nginx
     ports:
-      - 80:80
+      - 8080:8080
+      # add this to test url alias in nginx
+      - 8888:8888
+networks:
+  frontend:
+    driver: bridge
     
 
 # The commented out section below is an example of how to define a PostgreSQL
