@@ -20,14 +20,6 @@ services:
       - "app-network"
     ports:
       - "8080:3000"
-  nginx2:
-    build: 
-      context: ./nginx2
-    container_name: nginx2  
-    networks:
-      - "app-network"
-    ports:
-      - "8081:3000"
   node1:
     depends_on:
     - nginx1
@@ -75,55 +67,6 @@ services:
       - "app-network"
     environment:
       NODE_ENV: production
-
-  node5:
-    depends_on:
-    - nginx2
-    build:
-      context: ./node
-    hostname: "node5"
-    container_name: node5
-    networks:
-      - "app-network"
-    environment:
-      NODE_ENV: production
-
-  node6:
-    depends_on:
-    - nginx2
-    build:
-      context: ./node
-    hostname: "node6"
-    container_name: node6
-    networks:
-      - "app-network"
-    environment:
-      NODE_ENV: production
-
-  node7:
-    depends_on:
-    - nginx2
-    build:
-      context: ./node
-    hostname: "node7"
-    container_name: node7
-    networks:
-      - "app-network"
-    environment:
-      NODE_ENV: production
-
-  node8:
-    depends_on:
-    - nginx2
-    build:
-      context: ./node
-    hostname: "node8"
-    container_name: node8
-    networks:
-      - "app-network"
-    environment:
-      NODE_ENV: production
-
   
       
     
